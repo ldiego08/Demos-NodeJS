@@ -11,12 +11,22 @@ var _ = require("lodash"),
 
 var api = {
     products: {
+
+        /**
+         * Returns all products contained in the db.products array.
+         */
+
         "findAll": function (request, response) {
             return response.json({
                 success: true,
                 products: db.products
             });
         },
+
+        /**
+         * Returns a single product from the db.products array matching
+         * the ID coming from the request parameters.
+         */
 
         "findById": function (request, response) {
             var id = parseInt(request.params.id);
@@ -43,6 +53,11 @@ var api = {
             });
         },
 
+        /**
+         * Creates a product from the request body and adds it to the
+         * db.products array.
+         */
+
         "create": function (request, response) {
             var product = new models.Product(request.body);
             var productExist = _(db.products).any({ "id": product.id });         
@@ -62,6 +77,11 @@ var api = {
                 message: "A product with ID '" + product.id + "' already exists."
             });
         },
+
+        /**
+         * Removes a single product from the db.products array matching the
+         * ID specified in the request parameters.
+         */
 
         "delete": function (request, response) {
             var id = parseInt(request.params.id);
