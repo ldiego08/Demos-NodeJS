@@ -127,7 +127,7 @@ var Authentication = {
         });
     },
 
-    validateAuthentication: function (request, response, next) {
+    validateCredentials: function (request, response, next) {
         if (request.isAuthenticated()) {
             return next();
         }

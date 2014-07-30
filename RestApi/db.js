@@ -8,11 +8,11 @@
 var models = require("./models");
 
 var products = [
-    new models.Product(1, "Polo T-shirt", 10.5),
-    new models.Product(2, "Yankees Hat", 5.2),
-    new models.Product(3, "Kaki Pants", 12.4),
-    new models.Product(4, "Leather Shoes", 25),
-    new models.Product(5, "Tank Top", 5.4)];
+    new models.Product({ id: 1, name: "Polo T-shirt", price: 10.5 }),
+    new models.Product({ id: 2, name: "Yankees Hat", price: 5.2 }),
+    new models.Product({ id: 3, name: "Kaki Pants", price: 12.4 }),
+    new models.Product({ id: 4, name: "Leather Shoes", price: 25 }),
+    new models.Product({ id: 5, name: "Tank Top", price: 5.4 })];
 
 var orders = [
     new models.Order(1),

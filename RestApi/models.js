@@ -1,8 +1,8 @@
-﻿var Product = function (id, name, price) {
-	this.id = id;
-	this.name = name;
-	this.description = "";
-	this.price = price;
+﻿var Product = function (base) {
+	this.id = base.id;
+	this.name = base.name;
+	this.description = base.description || "";
+	this.price = base.price;
 };
 
 var OrderLine = function (orderId, product, quantity) {
